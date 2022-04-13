@@ -16,6 +16,15 @@ class Main extends Controller
   }
 
   /**
+   * destroi sessions
+   */
+  public function exit()
+  {
+    session_destroy();
+    header('location:' . URL);
+  }
+
+  /**
    * view error
    */
   public function error()

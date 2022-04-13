@@ -16,8 +16,50 @@ class Migration extends Model
         $table->text('name')->notNull();
         $table->text('email')->notNull();
         $table->text('passwd')->notNull();
+        $table->text('img')->notNull();
         $table->text('created_at');
         $table->text('updated_at');
+      });
+    }
+
+    // check if table exists
+    if (!self::db()->schema()->hasTable('pairs')) {
+      self::db()->schema()->create('pairs', function (CreateTable $table) {
+        $table->integer('id')->primary()->autoincrement();
+        $table->integer('idPrimary');
+        $table->integer('idSecondary');
+        $table->text('namePrimary');
+        $table->text('nameSecondary');
+        $table->integer('status');
+      });
+    }
+
+    // check if table exists
+    if (!self::db()->schema()->hasTable('invitations')) {
+      self::db()->schema()->create('invitations', function (CreateTable $table) {
+        $table->integer('id')->primary()->autoincrement();
+        $table->integer('idPrimary');
+        $table->integer('idSecondary');
+        $table->text('namePrimary');
+        $table->text('nameSecondary');
+        $table->integer('status');
+      });
+    }
+
+    // check if table exists
+    if (!self::db()->schema()->hasTable('cards')) {
+      self::db()->schema()->create('cards', function (CreateTable $table) {
+        $table->integer('id')->primary()->autoincrement();
+        $table->integer('status');
+        $table->integer('idPrimary');
+        $table->integer('idSecondary');
+        $table->text('namePrimary');
+        $table->text('nameSecondary');
+        $table->text('autor');
+        $table->text('title');
+        $table->text('description');
+        $table->text('date');
+        $table->text('created_at');
       });
     }
 

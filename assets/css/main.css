@@ -1,0 +1,21 @@
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #263238 !important;
+}
+
+.bg-primary {
+  background-color: #00838f !important;
+}
+
+.bg-secondary {
+  background-color: #6a1b9a !important;
+}
+
+.cover {
+  position: relative;
+  height: auto;
+  width: 100px;
+  border-radius: 15px;
+}

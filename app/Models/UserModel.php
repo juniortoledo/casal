@@ -38,6 +38,7 @@ class UserModel extends CrudModel
         'name' => $data['name'],
         'email' => $data['email'],
         'passwd' => md5($data['passwd']),
+        'img' => 'user.png',
         'created_at' => date('d-m-Y\TH:i:s'),
         'updated_at' => date('d-m-Y\TH:i:s')
       ), 'users');
@@ -47,14 +48,11 @@ class UserModel extends CrudModel
   /**
    * update a user
    */
-  public function updateUser($data)
+  public function updateUser($name)
   {
     return self::update(array(
-      'name' => $data['name'],
-      'email' => $data['email'],
-      'passwd' => md5($data['passwd']),
-      'updated_at' => date('d-m-Y\TH:i:s')
-    ), 'users', $data['id']);
+      'img' => $name,
+    ), 'users', $_SESSION['id']);
   }
 
   /**

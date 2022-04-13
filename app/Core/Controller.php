@@ -10,10 +10,15 @@ class Controller
   /**
    * render views
    */
-  public function render($page)
+  public function render($page, $array = [])
   {
-    $view = new Engine('app/views');
-    echo $view->render($page);
+    if ($array) {
+      $view = new Engine('app/views');
+      echo $view->render($page, $array);
+    } else {
+      $view = new Engine('app/views');
+      echo $view->render($page);
+    }
   }
 
   /**
@@ -33,7 +38,7 @@ class Controller
     $new_name = md5(time()) . $extension; // define the file name
     $directory = ASSETS . "images/"; // defines the directory where we will send the file
 
-    move_uploaded_file($data['tmp_name'], $directory . $new_name); // upload
+    move_uploaded_file($data['tmp_name'], $_SERVER["DOCUMENT_ROOT"] . '/assets/images/' . $new_name); // upload
 
     return $new_name;
   }
