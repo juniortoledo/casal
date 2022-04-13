@@ -33,8 +33,8 @@
 
       </div>
       <div class="col-12">
-        <button class="btn btl-lg w-100 shadow bg-primary text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#login">Login</button>
-        <button class="btn btl-lg w-100 shadow bg-white mt-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#cadastro">Cadastro</button>
+        <button class="btn btn-lg w-100 shadow bg-primary text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+        <button class="btn btn-lg w-100 shadow bg-white mt-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#cadastro">Cadastro</button>
         <!-- col -->
       </div>
       <!-- row  -->
